@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cinzel+Decorative:wght@400;700;900&family=DM+Serif+Display:ital@0;1&display=swap');
+*{
+    cursor: url('img/love_cursor.png'), auto;
+}
+body{
+    background-color: pink;
+    overflow-x: hidden;
+}
+u{
+    letter-spacing: 1px;
+}
+.pink1{
+    background-color: palevioletred;
+    color: palevioletred;
+}
+.pink3{
+    background-color: violet;
+    color: violet;
+}
+.pink2{
+    background-color: plum;
+    color: plum;
+}
+.primary-font{
+    font-family: 'Berkshire Swash', cursive;
+}
+.secondary-font{
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+}
+.general-font{
+    font-family: 'DM Serif Display', serif;
+}
+.pic img{
+    transition: 0.3s ease;
+}
+.pic img:hover{
+    scale: 1.2;
+}
+.pic{
+    position: relative;
+}
+.pic::after{
+    content: attr(data-text);
+    /* font-family: 'DM Serif Display', serif; */
+    font-family: 'Berkshire Swash', cursive;
+    background-color: rgba(255, 182, 193, 0.5);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    translate: -50% 200%;
+    font-size: 1.5em;
+    box-shadow: 1px 1px 5px 0 #0003;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+#year::after{
+    content: 'Year';
+    padding-left: 5px;
+}
+#month::after{
+    content: 'Month';
+    padding-left: 5px;
+}
+#day::after{
+    content: 'Day';
+    padding-left: 5px;
+}
+.pic:hover::after{
+    translate: -50% -50%;
+    opacity: 100%;
+}
+.img-sm{
+    scale: 1.2;
+    transition: 0.3s ease;
+}
+.img-sm:hover{
+    scale: 1;
+}
+
+@media screen and (max-width:575px){
+    .pic::after{
+        translate: -50% -50%;
+        opacity: 100%;
+    }
+    #year::after{
+        content: 'Y';
+    }
+    #month::after{
+        content: 'M';
+    }
+    #day::after{
+        content: 'D';
+    }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff9;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, pink, #ec3c7d);
+    border-radius: 50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    /* background: #ee5081; */
+    border: 1px solid #dc3545;
+  }
