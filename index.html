@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Line</title>
+    <script src="https://kit.fontawesome.com/59306e82f2.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+  <!--     <h3 class="text-center">Filter</h3> -->
+      <div class="form-group position-relative">
+        <textarea name="" id="code" class="form-control mb-3 bg-dark text-light py-3" disabled rows='1'>filter: invert(75%);</textarea>
+        <span class="position-absolute top-0 start-0 badge rounded-pill bg-primary" style='translate: 25% -50%'>
+          CSS Code
+        </span>
+      </div>
+      <div class="input-group mb-3">
+        <select class="form-select text-center" id="select">
+          <option value="blur">blur</option>
+          <option value="brightness">brightness</option>
+          <option value="contrast">contrast</option>
+          <option value="grayscale">grayscale</option>
+          <option value="hue-rotate">hue-rotate</option>
+          <option value="invert" selected>invert</option>
+          <option value="saturate">saturate</option>
+          <option value="sepia">sepia</option>
+        </select>
+        <button type='button' onClick="removeFilter()" class="position-absolute top-50 start-100 translate-middle badge rounded bg-danger py-1 px-2 border" title="Remove Filters">
+          <i class="fa-solid fa-xmark fa-sm"></i>
+    </button>
+        <label class="input-group-text"><span id="output">75</span> <span id="unit" class="me-2">%</span> </label>
+      </div>      
+      </select>
+  <!--     <input type="number" name="" id="output" class="form-control text-center my-3" value="75" disabled> -->
+      <input type="range" class="form-range" min="0" max="100" value="75" id="range" onInput="rangeVal(this.value, this.id)">
+  <!--      <div class="d-flex justify-content-between">
+         <button type='button' class="btn btn-plus mt-3" onClick="addFilter()" title="Add Filters"><i class="fa-solid fa-plus"></i></button> -->
+  <!--        <button type='button' class="btn btn-primary mt-3" onClick="render()">Apply Filter</button> -->
+  <!--        <button type='button' class="btn btn-cross mt-3" onClick="removeFilter()" title="Remove Filters"><i class="fa-solid fa-xmark fa-lg"></i></button> -->
+  <!--      </div> -->
+    </form>
+    <div id="front"></div>
+    <div id="circle"><i class="fa-brands fa-codepen"></i></div>
+    <div id="line"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

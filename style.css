@@ -1,0 +1,132 @@
+:root{
+    --circle-w: 70px;
+    --line-color: #ddd;
+    --transition: 0.1s ease;
+    --bg: url('https://picsum.photos/1920/1080');
+    --filter: invert(75%);
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: var(--bg);
+    background-size: 100vw 100vh;
+    background-position: right;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  /*   cursor: none; */
+  }
+  #front{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    background-position: right;
+    filter: var(--filter);
+    transition: var(--transition);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+  }
+  #circle{
+    position:absolute;
+    width: var(--circle-w);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    translate: -50% -50%;
+    font-size: 2em;
+    z-index: 2;
+    background: var(--line-color);
+    color: #0009;
+    transition: var(--transition);
+    border: 5px outset #0005;
+    outline: 5px solid var(--line-color)
+  }
+  #line{
+    position: absolute;
+    width: 10px;
+    height: 100vh;
+    background: var(--line-color);
+    translate: -50%;
+    top: 0;
+    z-index: 1;
+    transition: var(--transition);
+  /*   box-shadow: 0 0 5px 5px #0003; */
+  }
+  
+  form{
+    width: 300px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 3;
+    background: linear-gradient(45deg, #0005, #fff5);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px #0005;
+  }
+  #code{
+    resize: none;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #333;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fff5;
+    border-radius:50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  @media screen and (max-width: 1080px) {
+    :root{
+      --bg: url('https://picsum.photos/720/480');
+    }
+  }
+  
+  @media screen and (max-width: 720px) {
+    :root{
+      --bg: url('https://picsum.photos/480/720');
+    }
+  }
+  @media screen and (max-width: 480px) {
+    :root{
+      --bg: url('https://picsum.photos/1080/1920');
+    }
+  }
+  
+  .btn-plus{
+    color: white !important;
+    border-color: white !important;
+  }
+  .btn-plus:hover{
+    background: #198754 !important;
+    border-color: #0000 !important;
+  }
+  
+  .btn-cross{
+    color: white !important;
+    border-color: white !important;
+  }
+  .btn-cross:hover{
+    background: #dc3545 !important;
+    border-color: #0000 !important;
+  }
