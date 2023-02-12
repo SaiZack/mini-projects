@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@200;300;400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'K2D', sans-serif;
+}
+body{
+  background: radial-gradient(50% 50% at 50% 50%, #3C3C3C 0%, #252526 100%);
+  display: grid;
+  place-items:center;
+  height: 100vh;
+}
+form{
+  display:flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 30px;
+  background: red;
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+}
+h1{
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+input:not(#check){
+  font-size: 1.2em;
+  padding: 10px 25px;
+  margin: 10px 0;
+  background: #0000;
+  border: none;
+  border-bottom: 3px solid #333;
+  width: 100%;
+  color: #fff9;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: #fff9 !important;
+}
+input:hover, input:focus{
+  border-bottom: 3px solid #1e1e1e !important;
+}
+input:focus{
+  outline: none;
+}
+button{
+  background: #1E1E1E;
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-size: 1.1em;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 0.33;
+}
+#submit{
+  display: none;
+}
+.mid>*{
+  color: #8EB4FF;
+  font-size: 13px;
+}
+.mid{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 25px 0;
+ }
+.form-group{
+  position: relative;
+}
+.validator{
+  width: 12px;
+  aspect-ratio: 1/1;
+  background: #fff5;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  border: 2px solid #414141;
+  outline: 1px solid #fff5;
+}
+.form-group:has(input:not(:placeholder-shown):valid) .validator
+{
+  background: lime;
+}
+.form-group:has(input:invalid) .validator{
+  background: red;
+}
+form:has(#mail:not(:placeholder-shown):valid):has(#pwd:not(:placeholder-shown):valid) button#submit{
+  opacity: 0.66;
+  cursor: pointer;
+  display: block;
+}
+form:has(#mail:not(:placeholder-shown):valid):has(#pwd:not(:placeholder-shown):valid) button#disabled{
+  display: none;
+}
+form:has(#mail:not(:placeholder-shown):valid):has(#pwd:not(:placeholder-shown):valid) #submit:hover{
+  opacity: 1;
+}
+label{
+  display:flex;
+  align-items:center;
+}
+#check{
+  margin-right: 3px;
+}
+.line{
+/*   background: red; */
+  width: 14px;
+  height: 183px;
+  position: absolute;
+  bottom: 50px;
+  left:14px;
+  border-radius: 8px 0 0 8px;
+  border: 2px solid #fff3;
+  border-right: 0;
+}
+.line::before{
+  content: '';
+  width: 13px;
+  height: 2px;
+  position: absolute;
+  background: #fff3;
+  top: calc(50% - 23px);
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="#" id="form">
+    <h1>Log In</h1>
+    <div class="form-group">
+      <input type="email" name="mail" id="mail" placeholder="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <span class="validator" id="mail_validate"></span>
+    </div>
+    <div class="form-group">
+      <input type="password" name="pwd" id="pwd" placeholder="password" pattern=".{8,}">
+      <span class="validator" id="pwd_validate"></span>
+    </div>
+    <div class="mid">
+      <label> <input type="checkbox" name="check" id="check"> remember me?</label>
+      <a href="#">forgot password?</a>
+    </div>
+    <button type="button" id="disabled" disabled>Log In</button>
+    <button type="button" id="submit">Log In</button>
+    <span class="line"></span>
+  </form>
+  <script src="app.js"></script>
+</body>
+</html>
