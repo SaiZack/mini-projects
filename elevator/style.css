@@ -1,0 +1,56 @@
+:root{
+    --ele-pad-val: 25px;
+  }
+  body{
+    background-image: url(https://wallpapercrafter.com/desktop/111774-architecture-modern-elevator-building.jpg);
+    display: grid;
+    place-items: center;
+    height: 98vh;
+  }
+  .elevator, .buttons{
+    display:flex;
+  }
+  .elevator{
+    position: relative;
+    width: 150px;
+    background: #0005;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+    padding: var(--ele-pad-val);
+  }
+  .buttons{
+    flex-direction: column;
+  }
+  .room{
+    position: absolute;
+    bottom: var(--ele-pad-val);
+    right: var(--ele-pad-val);
+    width: 50px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #fff;
+    transition: .5s ease;
+    transform: translateY(calc(var(--y-val,0)*(-100%)));
+  }
+  .bi-person-fill{
+    font-size: 2em;
+  }
+  .btn{
+    background: #fff;
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 5px solid var(--btn-light, #aaa);
+    outline: 5px inset grey;
+    color: var(--btn-light, #000);
+    font-size: 1.5em;
+  }
+  .btn:hover, .active{
+    --btn-light: orangered;
+  }
+  
